@@ -37,25 +37,25 @@ export const TECTRIAD_MEMBERS: TriadMember[] = [
 export const TECTRIAD_ORG = {
   name: 'Tectriad',
   eyebrow: 'Tectriad • Rajarathinam M, Gowtham M & Gary A',
-  headlinePrefix: 'Built by Three Builders. Products & Services for',
+  headlinePrefix: 'Built by Three Builders. Products, Services & Open Source for',
   headlineAccent: 'Real Impact.',
   description:
-    'Tectriad is the software and education organization founded by Rajarathinam M, Gowtham M, and Gary A—delivering Ethics Of Coding, xpense-cloud, and Streako.',
-  offeringsLabel: 'Our Products & Services',
+    'Tectriad is the software, open source, and education organization founded by Rajarathinam M, Gowtham M, and Gary A—building Cinder UI, xpense-cloud, Streako, and Ethics Of Coding.',
+  offeringsLabel: 'Our Products, Services & Open Source',
 };
 
 export const TECTRIAD_OFFERINGS: OfferingSummary[] = [
   {
-    id: 'ethics-of-coding',
-    kind: 'Service',
-    name: 'Ethics Of Coding',
-    domainLabel: CHANNEL_HANDLE,
-    roleLabel: 'Service • Developer Education & DevKits',
+    id: 'cinder-ui',
+    kind: 'Open Source',
+    name: 'Cinder UI',
+    domainLabel: 'cinderui.tectriad.in',
+    roleLabel: 'Open Source • React UI & IconForge',
     summary:
-      'Free software engineering masterclasses in Tamil covering Flutter, BLoC, Web Dev, and Clean Architecture.',
-    statusLabel: '16+ Free Tutorials',
-    targetSection: '#videos',
-    externalUrl: CHANNEL_URL,
+      'Next-gen React component library and 1,000+ vector icon studio built with headless primitives, strict accessibility, and token-driven Cinder Slate design.',
+    statusLabel: 'v0.1.1 • Dual ESM/CJS',
+    targetSection: '#product-cinder-ui',
+    externalUrl: 'https://cinderui.tectriad.in/',
   },
   {
     id: 'xpense-cloud',
@@ -80,5 +80,17 @@ export const TECTRIAD_OFFERINGS: OfferingSummary[] = [
     statusLabel: 'Live • Android & Web',
     targetSection: '#product-streako',
     externalUrl: 'http://streako.in/',
+  },
+  {
+    id: 'ethics-of-coding',
+    kind: 'Service',
+    name: 'Ethics Of Coding',
+    domainLabel: CHANNEL_HANDLE,
+    roleLabel: 'Service • Developer Education & DevKits',
+    summary:
+      'Free software engineering masterclasses in Tamil covering Flutter, BLoC, Web Dev, and Clean Architecture.',
+    statusLabel: '16+ Free Tutorials',
+    targetSection: '#videos',
+    externalUrl: CHANNEL_URL,
   },
 ];

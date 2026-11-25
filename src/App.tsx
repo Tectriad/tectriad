@@ -8,7 +8,7 @@ import { TutorialsPage } from "./pages/TutorialsPage";
 import { DiscussPage } from "./pages/DiscussPage";
 
 const ROUTE_TITLES: Record<string, string> = {
-  "/": "Tectriad | Rajarathinam M, Gowtham M & Gary A — Ethics Of Coding, xpense-cloud & Streako",
+  "/": "Tectriad | Rajarathinam M, Gowtham M & Gary A — Cinder UI, xpense-cloud, Streako & Ethics Of Coding",
   "/tutorials": "Ethics Of Coding Tutorials | Tectriad",
   "/discuss": "Have Any Idea in Mind? Let's Discuss | Tectriad",
 };

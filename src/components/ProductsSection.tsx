@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PRODUCTS_DATA } from '../data/productsData';
 import type { ProductFeature } from '../types';
@@ -10,6 +10,11 @@ import {
   YouTubeIcon,
   ExternalLinkIcon,
   CheckCircleIcon,
+  GitHubIcon,
+  GitPullRequestIcon,
+  TerminalIcon,
+  CopyIcon,
+  ArrowRightIcon,
 } from './Icons';
 
 function renderFeatureIcon(icon: ProductFeature['icon']) {
@@ -101,20 +106,35 @@ function renderFeatureIcon(icon: ProductFeature['icon']) {
 }
 
 export const ProductsSection: React.FC = () => {
+  const [copiedCommand, setCopiedCommand] = useState<string | null>(null);
+
+  const handleCopyInstall = async (cmd: string) => {
+    try {
+      await navigator.clipboard.writeText(cmd);
+      setCopiedCommand(cmd);
+      window.setTimeout(() => {
+        setCopiedCommand((current) => (current === cmd ? null : current));
+      }, 2200);
+    } catch {
+      // Fallback if clipboard API is restricted
+      setCopiedCommand(null);
+    }
+  };
+
   return (
     <section className="section-wrapper projects-section" id="products">
       <div className="container">
         <div className="section-header">
           <div className="section-eyebrow">
-            <span className="badge badge-primary">Products &amp; Services</span>
+            <span className="badge badge-primary">Products, Services &amp; Open Source</span>
           </div>
           <h2>
-            Our Products &amp; Services Under{' '}
+            Our Ecosystem Under{' '}
             <span className="gradient-text">Tectriad</span>
           </h2>
           <p>
-            Built and operated by Rajarathinam M, Gowtham M, and Gary A—combining free
-            developer education services with live finance and daily habit products.
+            Built and operated by Rajarathinam M, Gowtham M, and Gary A—combining open source
+            design engineering, developer education, cloud finance, and daily habit tracking.
           </p>
         </div>
 
@@ -149,6 +169,42 @@ export const ProductsSection: React.FC = () => {
               {/* Row 2: Description & Highlights */}
               <div className="ecosystem-card-body">
                 <p className="project-description-text">{product.description}</p>
+
+                {product.installCommand && (
+                  <div
+                    className="project-install-widget"
+                    role="region"
+                    aria-label="Terminal install snippet"
+                  >
+                    <span className="project-install-icon" aria-hidden="true">
+                      <TerminalIcon size={14} />
+                    </span>
+                    <code className="project-install-code">{product.installCommand}</code>
+                    <button
+                      type="button"
+                      className="project-install-copy-btn"
+                      onClick={() => handleCopyInstall(product.installCommand!)}
+                      aria-label={
+                        copiedCommand === product.installCommand
+                          ? 'Copied install command to clipboard'
+                          : `Copy ${product.installCommand} to clipboard`
+                      }
+                      title="Copy install command"
+                    >
+                      {copiedCommand === product.installCommand ? (
+                        <>
+                          <CheckCircleIcon size={13} />
+                          <span>Copied</span>
+                        </>
+                      ) : (
+                        <>
+                          <CopyIcon size={13} />
+                          <span>Copy</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                )}
 
                 <ul className="ecosystem-feature-list">
                   {product.features.map((feat) => (
@@ -220,8 +276,36 @@ export const ProductsSection: React.FC = () => {
                     </a>
                   ))}
 
-                {(product.playStoreUrl || product.appStoreUrl || product.externalActionUrl) && (
+                {(product.playStoreUrl ||
+                  product.appStoreUrl ||
+                  product.externalActionUrl ||
+                  product.githubUrl ||
+                  product.contributingUrl) && (
                   <div className="project-secondary-actions">
+                    {product.githubUrl && (
+                      <a
+                        href={product.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-secondary btn-sm store-btn"
+                      >
+                        <GitHubIcon size={15} />
+                        <span>GitHub</span>
+                        <ExternalLinkIcon size={12} />
+                      </a>
+                    )}
+                    {product.contributingUrl && (
+                      <a
+                        href={product.contributingUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-secondary btn-sm store-btn"
+                      >
+                        <GitPullRequestIcon size={15} />
+                        <span>Contribute</span>
+                        <ExternalLinkIcon size={12} />
+                      </a>
+                    )}
                     {product.playStoreUrl && (
                       <a
                         href={product.playStoreUrl}
@@ -261,6 +345,101 @@ export const ProductsSection: React.FC = () => {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* Dedicated Open Source Contributions Hub */}
+        <div className="open-source-hub glass-card" id="contributions">
+          <div className="open-source-hub-header">
+            <div className="open-source-hub-badge-row">
+              <span className="badge badge-brand-cinder-ui">
+                Open Source Community
+              </span>
+              <span className="open-source-tag">MIT License</span>
+              <span className="open-source-tag">Monorepo</span>
+              <span className="open-source-tag">Zero Emojis</span>
+              <span className="open-source-tag">Strict TypeScript</span>
+            </div>
+            <h3>Contribute to Cinder UI &amp; IconForge</h3>
+            <p>
+              Cinder is an open source design engineering monorepo built collaboratively under
+              Tectriad. Whether you want to add new accessible React primitives, design vector
+              icons for IconForge, optimize performance, or improve docs—we warmly welcome
+              contributions.
+            </p>
+          </div>
+
+          <div className="open-source-steps-grid">
+            <div className="open-source-step-card">
+              <span className="step-number">01</span>
+              <h4>Explore Monorepo Packages</h4>
+              <p>
+                Work with <code>@tec-triad/cinder-ui</code> (component library) or{' '}
+                <code>@tec-triad/iconforge-react</code> and <code>iconforge-svg</code> (1,000+ vector
+                icons across 6 styles).
+              </p>
+            </div>
+
+            <div className="open-source-step-card">
+              <span className="step-number">02</span>
+              <h4>Engineering Standards</h4>
+              <p>
+                Strict 500-line file ceiling for modularity, zero emojis (SVGs only), explicit
+                TypeScript interfaces, and token-driven Cinder Slate styling.
+              </p>
+            </div>
+
+            <div className="open-source-step-card">
+              <span className="step-number">03</span>
+              <h4>Fork &amp; Create a Branch</h4>
+              <p>
+                Clone <code>Tectriad/cinder</code>, create your branch (e.g.{' '}
+                <code>feature/new-primitive</code>), install dependencies with <code>npm install</code>
+                , and run tests.
+              </p>
+            </div>
+
+            <div className="open-source-step-card">
+              <span className="step-number">04</span>
+              <h4>Pull Request &amp; Review</h4>
+              <p>
+                Open your PR against <code>main</code>. The founding triad (Rajarathinam M, Gowtham
+                M, and Gary A) actively reviews and merges community PRs.
+              </p>
+            </div>
+          </div>
+
+          <div className="open-source-hub-actions">
+            <a
+              href="https://github.com/Tectriad/cinder"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
+              <GitHubIcon size={16} />
+              <span>GitHub Repository</span>
+              <ExternalLinkIcon size={14} />
+            </a>
+            <a
+              href="https://github.com/Tectriad/cinder/blob/main/CONTRIBUTING.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary"
+            >
+              <GitPullRequestIcon size={16} />
+              <span>Read Contribution Guide</span>
+              <ExternalLinkIcon size={14} />
+            </a>
+            <a
+              href="https://cinderui.tectriad.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary"
+            >
+              <GlobeIcon size={16} />
+              <span>Documentation &amp; Studio</span>
+              <ArrowRightIcon size={14} />
+            </a>
+          </div>
         </div>
       </div>
     </section>

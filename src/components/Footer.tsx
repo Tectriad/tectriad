@@ -6,6 +6,7 @@ import {
   YouTubeIcon,
   ArrowUpIcon,
   ExternalLinkIcon,
+  GitHubIcon,
 } from './Icons';
 
 export const Footer: React.FC = () => {
@@ -37,9 +38,9 @@ export const Footer: React.FC = () => {
           </div>
 
           <p className="footer-about-text">
-            A software and developer education organization founded by
-            Rajarathinam M, Gowtham M, and Gary A—building Ethics Of Coding,
-            xpense-cloud, and Streako.
+            A software, open source, and developer education organization founded by
+            Rajarathinam M, Gowtham M, and Gary A—building Cinder UI,
+            xpense-cloud, Streako, and Ethics Of Coding.
           </p>
 
           <div className="footer-channel-link-box">
@@ -57,8 +58,26 @@ export const Footer: React.FC = () => {
 
         {/* Products & Services Column */}
         <div className="footer-links-col">
-          <h2 className="footer-col-title">Products &amp; Services</h2>
+          <h2 className="footer-col-title">Products &amp; Open Source</h2>
           <ul className="footer-links-list">
+            <li>
+              <a
+                href="https://cinderui.tectriad.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Cinder UI (Open Source) <ExternalLinkIcon size={12} />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Tectriad/cinder/blob/main/CONTRIBUTING.md"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Contribute to Cinder <ExternalLinkIcon size={12} />
+              </a>
+            </li>
             <li>
               <Link to="/tutorials">Ethics Of Coding (Service)</Link>
             </li>
@@ -131,6 +150,16 @@ export const Footer: React.FC = () => {
               <YouTubeIcon size={16} />
               <span>Subscribe on YouTube</span>
             </a>
+            <a
+              href="https://github.com/Tectriad/cinder"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary btn-sm footer-gh-btn"
+            >
+              <GitHubIcon size={16} />
+              <span>Cinder on GitHub</span>
+              <ExternalLinkIcon size={12} />
+            </a>
           </div>
         </div>
       </div>
@@ -141,7 +170,7 @@ export const Footer: React.FC = () => {
           Gowtham M &amp; Gary A.
         </div>
         <div className="bottom-center">
-          Ethics Of Coding • xpense-cloud • Streako
+          Cinder UI • xpense-cloud • Streako • Ethics Of Coding
         </div>
         <button
           type="button"

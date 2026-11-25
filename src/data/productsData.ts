@@ -3,6 +3,62 @@ import { CHANNEL_URL, CHANNEL_HANDLE } from './videosData';
 
 export const PRODUCTS_DATA: ProductItem[] = [
   {
+    id: 'cinder-ui',
+    brandId: 'cinder-ui',
+    kind: 'Open Source',
+    name: 'Cinder UI & IconForge',
+    category: 'React Component Library & Vector Icons',
+    badge: 'Open Source Monorepo',
+    status: 'Live',
+    platforms: 'React 18/19 • TypeScript • npm',
+    tagline: 'High-Performance React Component Library, Design System & IconForge Vector Studio',
+    description:
+      'Tectriad’s foundational open source design engineering monorepo. Built on headless primitives, strict polymorphic TypeScript typing, token-driven Cinder Slate design, and a 1,000+ vector icon ecosystem across 6 distinct visual styles.',
+    websiteUrl: 'https://cinderui.tectriad.in/',
+    websiteLabel: 'Launch Cinder UI Studio',
+    githubUrl: 'https://github.com/Tectriad/cinder',
+    contributingUrl: 'https://github.com/Tectriad/cinder/blob/main/CONTRIBUTING.md',
+    npmUrl: 'https://www.npmjs.com/package/@tec-triad/cinder-ui',
+    installCommand: 'npm install @tec-triad/cinder-ui',
+    licenseLabel: 'MIT Open Source',
+    highlights: [
+      '50+ Headless Primitives',
+      '1,000+ IconForge Vectors',
+      'Strict Polymorphism (as prop)',
+      'Obsidian Cinder Slate Tokens',
+    ],
+    stats: [
+      { label: 'Ecosystem', value: '4 Monorepo Packages' },
+      { label: 'License', value: 'MIT Open Source' },
+    ],
+    features: [
+      {
+        title: 'Polymorphic Headless Primitives',
+        description:
+          'Over 50 unstyled, accessible React components with strict polymorphic typing and zero runtime bloat.',
+        icon: 'layers',
+      },
+      {
+        title: 'IconForge 6-Style Vector Studio',
+        description:
+          'Over 1,000 curated vector icons in Outline, Filled, Duotone, Multicolor, Gradient, and Rounded styles.',
+        icon: 'code',
+      },
+      {
+        title: 'Token-Driven Cinder Slate Engine',
+        description:
+          'Precision obsidian slate surfaces and royal blue accents calibrated for high-density enterprise interfaces.',
+        icon: 'shield',
+      },
+      {
+        title: 'Open Source Developer Contributions',
+        description:
+          'Clear contribution standards: 500-line modular limit, zero emojis, strict TypeScript, and welcoming PR reviews.',
+        icon: 'award',
+      },
+    ],
+  },
+  {
     id: 'xpense-cloud',
     brandId: 'xpense-cloud',
     kind: 'Product',

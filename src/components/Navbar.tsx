@@ -92,6 +92,9 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
           <Link to="/#products" className="nav-link">
             Products
           </Link>
+          <a href="#contributions" className="nav-link">
+            Open Source
+          </a>
           <Link
             to="/tutorials"
             className={`nav-link ${isTutorialsPage ? "active" : ""}`}
@@ -179,9 +182,19 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
               className="mobile-nav-link"
               onClick={closeMobileMenu}
             >
-              <span>Products &amp; Services</span>
-              <span className="badge badge-emerald">3 Offerings</span>
+              <span>Products &amp; Open Source</span>
+              <span className="badge badge-emerald">4 Offerings</span>
             </Link>
+            <a
+              href="https://cinderui.tectriad.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mobile-nav-link"
+              onClick={closeMobileMenu}
+            >
+              <span>Cinder UI (Open Source)</span>
+              <span className="badge badge-primary">Docs</span>
+            </a>
             <Link
               to="/tutorials"
               className="mobile-nav-link"

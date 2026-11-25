@@ -1,8 +1,12 @@
 export type CategoryType = 'all' | 'flutter' | 'web' | 'career' | 'products';
 
-export type TriadBrandId = 'ethics-of-coding' | 'xpense-cloud' | 'streako';
+export type TriadBrandId =
+  | 'ethics-of-coding'
+  | 'xpense-cloud'
+  | 'streako'
+  | 'cinder-ui';
 
-export type OfferingKind = 'Service' | 'Product';
+export type OfferingKind = 'Service' | 'Product' | 'Open Source';
 
 export interface VideoItem {
   id: string;
@@ -46,6 +50,11 @@ export interface ProductItem {
   internalLabel?: string;
   externalActionUrl?: string;
   externalActionLabel?: string;
+  githubUrl?: string;
+  contributingUrl?: string;
+  npmUrl?: string;
+  installCommand?: string;
+  licenseLabel?: string;
   highlights: string[];
   features: ProductFeature[];
   stats: ProductStat[];

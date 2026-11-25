@@ -91,6 +91,7 @@ function validateFieldValue(field: FieldKey, rawValue: string): string {
 const DISCUSSION_TOPICS = [
   'Mobile & web product builds (Flutter, React, TypeScript)',
   'Full-stack architecture & scalable backend APIs',
+  'Contributing to Cinder UI & IconForge open source',
   'App feedback, feature ideas, or collaborations on xpense-cloud & Streako',
   'Developer tutorials or deep-dive topic requests for Ethics Of Coding',
 ];

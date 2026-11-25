@@ -81,36 +81,44 @@ export const Hero: React.FC = () => {
                 className="triad-line-stem"
               />
               <line
-                x1="145"
+                x1="112"
                 y1="24"
-                x2="755"
+                x2="788"
                 y2="24"
                 vectorEffect="non-scaling-stroke"
                 className="triad-line-rail"
               />
               <line
-                x1="145"
+                x1="112"
                 y1="24"
-                x2="145"
+                x2="112"
                 y2="48"
                 vectorEffect="non-scaling-stroke"
-                className="triad-line-drop triad-drop-ethics"
+                className="triad-line-drop triad-drop-cinder"
               />
               <line
-                x1="450"
+                x1="338"
                 y1="24"
-                x2="450"
+                x2="338"
                 y2="48"
                 vectorEffect="non-scaling-stroke"
                 className="triad-line-drop triad-drop-xpense"
               />
               <line
-                x1="755"
+                x1="562"
                 y1="24"
-                x2="755"
+                x2="562"
                 y2="48"
                 vectorEffect="non-scaling-stroke"
                 className="triad-line-drop triad-drop-streako"
+              />
+              <line
+                x1="788"
+                y1="24"
+                x2="788"
+                y2="48"
+                vectorEffect="non-scaling-stroke"
+                className="triad-line-drop triad-drop-ethics"
               />
             </svg>
             <span className="triad-connector-label">
